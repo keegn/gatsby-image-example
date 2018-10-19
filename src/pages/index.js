@@ -8,9 +8,14 @@ import Layout from '../components/layout'
 
 // Styled Component example - here we just pass in our gatsby Img component
 const Image = styled(Img)`
-  border-radius: 24px;
+  border-radius: none;
 `
-
+const SectionHeader = styled.h2`
+  font-weight: 300;
+  text-align: center;
+  padding: 5rem 10px 0;
+  color: #4b4b4b;
+`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -19,6 +24,12 @@ const Grid = styled.div`
 
 const IndexPage = (props) => (
   <Layout>
+    <SectionHeader>Blur up effect (GatsbyImageSharpFluid)</SectionHeader>
+    <Grid>
+    <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
+    <Img fluid={props.data.imageApp.childImageSharp.fluid} />  
+    </Grid>
+    <SectionHeader>SVG trace effect (GatsbyImageSharpFluid)</SectionHeader>
     <Grid>
     <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
     <Img fluid={props.data.imageApp.childImageSharp.fluid} />  
