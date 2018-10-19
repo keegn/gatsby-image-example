@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-
 import Layout from '../components/layout'
 
 // Styled Component example - here we just pass in our gatsby Img component
@@ -15,25 +14,35 @@ const SectionHeader = styled.h2`
   text-align: center;
   padding: 5rem 10px 0;
   color: #4b4b4b;
+  font-size: 20px;
+`
+const Section = styled.div`
+  display: grid;
+  align-items: center;
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  @media (max-width: 400px) {
+    grid-gap: 4px;
+  }
 `
 
-const IndexPage = (props) => (
+const IndexPage = props => (
   <Layout>
+  <Section>
     <SectionHeader>Blur up effect (GatsbyImageSharpFluid)</SectionHeader>
     <Grid>
-    <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
-    <Img fluid={props.data.imageApp.childImageSharp.fluid} />  
+      <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
+      <Img fluid={props.data.imageApp.childImageSharp.fluid} />
     </Grid>
-    <SectionHeader>SVG trace effect (GatsbyImageSharpFluid)</SectionHeader>
+    <SectionHeader>SVG trace effect (GatsbyImageSharpFluid_tracedSVG)</SectionHeader>
     <Grid>
-    <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
-    <Img fluid={props.data.imageApp.childImageSharp.fluid} />  
+      <Image fluid={props.data.imageDesert.childImageSharp.fluid} />
+      <Img fluid={props.data.imageBoat.childImageSharp.fluid} />
     </Grid>
+    </Section>
   </Layout>
 )
 
@@ -42,23 +51,39 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     imageMountain: file(relativePath: { eq: "lake.jpeg" }) {
-     ...fluidImage
+      ...fluidImage
     }
     imageApp: file(relativePath: { eq: "waves.jpg" }) {
       ...fluidImage
     }
-  }
-`
-
-export const fluidImage = graphql`
-fragment fluidImage on File {
-  childImageSharp {
-     fluid(maxWidth: 1000, quality: 100) {
-      ...GatsbyImageSharpFluid
+    imageDesert: file(relativePath: { eq: "desert.jpeg" }) {
+      ...traceImage
+    }
+    imageBoat: file(relativePath: { eq: "boats.jpeg" }) {
+      ...traceImage
     }
   }
-}
-`;
+`
+// Blur up
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000, quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+// SVG Trace
+export const traceImage = graphql`
+  fragment traceImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000, quality: 100) {
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+`
 
 /* 
 Some notes: 
@@ -101,5 +126,3 @@ we can also change the background load color
 <Img fluid={props.data.imageTest.childImageSharp.fluid} backgroundColor="purple" />
 
 */
-
-

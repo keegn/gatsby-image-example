@@ -5,7 +5,7 @@ const Header = ({ siteTitle }) => (
   <div
     style={{
       background: 'white',
-      boxShadow:'rgba(72, 76, 87, 0.1) 0px 1px 3px',
+      boxShadow: 'rgba(72, 76, 87, 0.1) 0px 1px 3px',
       margin: '0 auto',
     }}
   >
@@ -15,6 +15,7 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
         padding: '1.45rem 1.0875rem',
         textAlign: 'center',
+        display: 'grid',
       }}
     >
       <h1 style={{ margin: 0 }}>
