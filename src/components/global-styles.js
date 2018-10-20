@@ -17,11 +17,16 @@ body {
 
 h1, h2, h3 {
     margin: 0;
-    line-height: 0;
+
 }
 
 a {
     color: #5334F5;
     font-weight: 600;
+}
+
+.active {
+    font-weight: 700;
+    color: rgba(22, 23, 26, 1);
 }
 `

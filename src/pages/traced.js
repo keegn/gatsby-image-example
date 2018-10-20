@@ -14,6 +14,7 @@ const Section = styled.div`
   align-items: center;
   padding: 2rem 0 0;
 `
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,7 +26,7 @@ const Grid = styled.div`
   }
 `
 // In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
-const IndexPage = props => (
+const TracedPage = props => (
   <Layout>
     <Section>
       <Grid>
@@ -38,35 +39,34 @@ const IndexPage = props => (
   </Layout>
 )
 
-export default IndexPage
+export default TracedPage
 
 export const pageQuery = graphql`
   query {
     imageMountain: file(relativePath: { eq: "lake.jpeg" }) {
-      ...fluidImage
+      ...traceImage
     }
     imageApp: file(relativePath: { eq: "waves.jpg" }) {
-      ...fluidImage
+      ...traceImage
     }
     imageDesert: file(relativePath: { eq: "desert.jpeg" }) {
-      ...fluidImage
+      ...traceImage
     }
     imageBoat: file(relativePath: { eq: "boats.jpeg" }) {
-      ...fluidImage
+      ...traceImage
     }
   }
 `
-// Blur up
-export const fluidImage = graphql`
-  fragment fluidImage on File {
+// SVG trace
+export const traceImage = graphql`
+  fragment traceImage on File {
     childImageSharp {
       fluid(maxWidth: 1000, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }
     }
   }
 `
-
 
 /* 
 Some notes:
