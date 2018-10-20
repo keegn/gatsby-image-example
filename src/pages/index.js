@@ -4,26 +4,13 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import { Section, Grid } from '../components/global-styles'
 
 // Styled Component example - here we just pass in our gatsby Img component
 const Image = styled(Img)`
   border-radius: none;
 `
-const Section = styled.div`
-  display: grid;
-  align-items: center;
-  padding: 2rem 0 0;
-`
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 4rem;
-  align-items: center;
-  padding: 2rem 4rem;
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-`
+
 // In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
 const IndexPage = props => (
   <Layout>
@@ -66,7 +53,6 @@ export const fluidImage = graphql`
     }
   }
 `
-
 
 /* 
 Some notes:
