@@ -12,7 +12,7 @@ const Image = styled(Img)`
 const SectionHeader = styled.h2`
   font-weight: 300;
   text-align: center;
-  padding: 5rem 1rem 0;
+  padding: 4rem 0 0;
   color: #4b4b4b;
   font-size: 2.4rem;
 `
@@ -23,15 +23,14 @@ const Section = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 4rem;
   align-items: center;
-  padding: 2rem;
-  @media (max-width: 400px) {
-    grid-gap: 2rem;
+  padding: 2rem 4rem;
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `
-
+// In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
 const IndexPage = props => (
   <Layout>
     <Section>
@@ -89,8 +88,9 @@ export const traceImage = graphql`
 `
 
 /* 
-Some notes: 
-Check out documentation 
+Some notes:
+
+Duotone example
 childImageSharp {
   fluid(maxWidth: 1000, quality: 100, duotone: { shadow: "#222222", highlight: "#454848" }) {
     ...GatsbyImageSharpFluid_noBase64
@@ -99,7 +99,7 @@ childImageSharp {
 Great tutorial on Gatsby Image V2
 https://codebushi.com/using-gatsby-image/ 
 
-we implemented a DRY pattern above with the helper graphql query of fluidImg, without it our pageQuery would be very repititive if we have a lot of images, see the example below to get an idea of why we did the above.
+we implemented a DRY pattern above with the helper graphql query of fluidImg, without it our pageQuery would be very repititive if we had a lot of images, see the example below to get an idea of why we did the above.
 
 query {
   imageOne: file(relativePath: { eq: "one.jpg" }) {
@@ -125,7 +125,7 @@ query {
   }
 }
 
-we can also change the background load color 
+We can also change the background load color 
 <Img fluid={props.data.imageTest.childImageSharp.fluid} backgroundColor="purple" />
 
 */
