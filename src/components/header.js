@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
   display: grid;
   height: 8rem;
   @media (max-width: 600px) {
-    height: 12rem;
+    height: auto;
   }
 `
 const HeaderBar = styled.div`
@@ -25,9 +25,10 @@ const HeaderBar = styled.div`
 const HeaderLogoText = styled.h1`
   justify-self: start;
   padding-left: 4rem;
+  display: grid;
   @media (max-width: 600px) {
     justify-self: center;
-    padding: 1rem 0;
+    padding: 2rem 0 1rem;
   }
 `
 const LinkGroup = styled.h2`
@@ -38,7 +39,7 @@ const LinkGroup = styled.h2`
   grid-template-columns: 1fr 1fr 1fr;
   @media (max-width: 600px) {
     justify-self: center;
-    padding: 0 0 1rem;
+    padding: 1rem 0 2rem;
   }
 `
 const PageLink = styled(Link)`
@@ -56,6 +57,7 @@ const HeaderLogoLink = styled(Link)`
   color: #1b1b1b;
   text-decoration: none;
   font-size: 2.4rem;
+  align-self: center;
 `
 
 const Header = ({ siteTitle }) => (
