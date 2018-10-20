@@ -8,18 +8,50 @@ const HeaderContainer = styled.div`
   border-bottom: 1px solid #eee;
   display: grid;
   height: 8rem;
+  @media (max-width: 600px) {
+    height: 12rem;
+  }
 `
 const HeaderBar = styled.div`
-  margin: 0 auto;
-  max-width: 96rem;
   text-align: center;
   display: grid;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `
-const HeaderText = styled.h1`
-  margin: 0 auto;
+const HeaderLogoText = styled.h1`
+  justify-self: start;
+  padding-left: 4rem;
+  @media (max-width: 600px) {
+    justify-self: center;
+    padding: 1rem 0;
+  }
 `
-const HeaderLink = styled(Link)`
+const LinkGroup = styled.h2`
+  justify-self: end;
+  align-items: center;
+  padding-right: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 600px) {
+    justify-self: center;
+    padding: 0 0 1rem;
+  }
+`
+const PageLink = styled(Link)`
+  font-weight: 300;
+  text-decoration: none;
+  color: #4b4b4b;
+  margin: 0 0 0 2rem;
+  font-size: 2rem;
+  @media (max-width: 600px) {
+    margin: 0 2rem;
+  }
+`
+
+const HeaderLogoLink = styled(Link)`
   color: #1b1b1b;
   text-decoration: none;
   font-size: 2.4rem;
@@ -28,9 +60,14 @@ const HeaderLink = styled(Link)`
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <HeaderBar>
-      <HeaderText>
-        <HeaderLink to="/">{siteTitle}</HeaderLink>
-      </HeaderText>
+      <HeaderLogoText>
+        <HeaderLogoLink to="/">{siteTitle}</HeaderLogoLink>
+      </HeaderLogoText>
+      <LinkGroup>
+        <PageLink to='/' exact activeClassName="active">Blur</PageLink>
+        <PageLink to='/traced' exact activeClassName="active">Traced</PageLink>
+        <PageLink to='/'>Color</PageLink>
+      </LinkGroup>
     </HeaderBar>
   </HeaderContainer>
 )

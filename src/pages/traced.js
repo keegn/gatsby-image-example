@@ -12,43 +12,43 @@ const Image = styled(Img)`
 `
 
 // In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
-const IndexPage = props => (
+const TracedPage = props => (
   <Layout>
     <Section>
       <Grid>
-        <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
-        <Img fluid={props.data.imageApp.childImageSharp.fluid} />
-        <Image fluid={props.data.imageDesert.childImageSharp.fluid} />
-        <Img fluid={props.data.imageBoat.childImageSharp.fluid} />
+        <Image fluid={props.data.imageRainbow.childImageSharp.fluid} />
+        <Img fluid={props.data.imageField.childImageSharp.fluid} />
+        <Image fluid={props.data.imageTan.childImageSharp.fluid} />
+        <Img fluid={props.data.imageWater.childImageSharp.fluid} />
       </Grid>
     </Section>
   </Layout>
 )
 
-export default IndexPage
+export default TracedPage
 
 export const pageQuery = graphql`
   query {
-    imageMountain: file(relativePath: { eq: "lake.jpeg" }) {
-      ...fluidImage
+    imageRainbow: file(relativePath: { eq: "rainbow.jpeg" }) {
+      ...traceImage
     }
-    imageApp: file(relativePath: { eq: "waves.jpg" }) {
-      ...fluidImage
+    imageField: file(relativePath: { eq: "field.jpeg" }) {
+      ...traceImage
     }
-    imageDesert: file(relativePath: { eq: "desert.jpeg" }) {
-      ...fluidImage
+    imageTan: file(relativePath: { eq: "tan.jpeg" }) {
+      ...traceImage
     }
-    imageBoat: file(relativePath: { eq: "boats.jpeg" }) {
-      ...fluidImage
+    imageWater: file(relativePath: { eq: "water.jpeg" }) {
+      ...traceImage
     }
   }
 `
-// Blur up
-export const fluidImage = graphql`
-  fragment fluidImage on File {
+// SVG trace
+export const traceImage = graphql`
+  fragment traceImage on File {
     childImageSharp {
       fluid(maxWidth: 1000, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }
     }
   }
