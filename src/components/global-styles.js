@@ -33,7 +33,6 @@ a {
 }
 `
 // Global styled components
-
 export const Section = styled.div`
   display: grid;
   align-items: center;

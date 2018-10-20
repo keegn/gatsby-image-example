@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { GlobalStyle } from './global-styles'
 import styled from 'styled-components'
 
 // for use on scroll box-shadow: 0px 1px 3px rgba(72, 76, 87, 0.1);
@@ -58,18 +59,25 @@ const HeaderLogoLink = styled(Link)`
 `
 
 const Header = ({ siteTitle }) => (
+  <React.Fragment>
+  <GlobalStyle />
   <HeaderContainer>
-    <HeaderBar>
-      <HeaderLogoText>
-        <HeaderLogoLink to="/">{siteTitle}</HeaderLogoLink>
-      </HeaderLogoText>
-      <LinkGroup>
-        <PageLink to='/' exact activeClassName="active">Blur</PageLink>
-        <PageLink to='/traced' exact activeClassName="active">Traced</PageLink>
-        <PageLink to='/'>Color</PageLink>
-      </LinkGroup>
-    </HeaderBar>
+      <HeaderBar>
+        <HeaderLogoText>
+          <HeaderLogoLink to="/">{siteTitle}</HeaderLogoLink>
+        </HeaderLogoText>
+        <LinkGroup>
+          <PageLink to="/" exact activeClassName="active">
+            Blur
+          </PageLink>
+          <PageLink to="/traced" exact activeClassName="active">
+            Traced
+          </PageLink>
+          <PageLink to="/">Color</PageLink>
+        </LinkGroup>
+      </HeaderBar>
   </HeaderContainer>
+  </React.Fragment>
 )
 
 export default Header
