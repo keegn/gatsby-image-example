@@ -15,6 +15,11 @@ body {
     margin: 0;
 }
 
+h1, h2, h3 {
+    margin: 0;
+    line-height: 0;
+}
+
 a {
     color: #5334F5;
     font-weight: 600;

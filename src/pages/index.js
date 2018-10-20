@@ -9,16 +9,17 @@ import Layout from '../components/layout'
 const Image = styled(Img)`
   border-radius: none;
 `
-const SectionHeader = styled.h2`
-  font-weight: 300;
-  text-align: center;
-  padding: 4rem 0 0;
-  color: #4b4b4b;
-  font-size: 2.4rem;
-`
 const Section = styled.div`
   display: grid;
   align-items: center;
+  padding: 2rem 0 0;
+`
+const SectionHeader = styled.h2`
+  font-weight: 300;
+  text-align: center;
+  padding: 4rem 0 1rem;
+  color: #4b4b4b;
+  font-size: 2rem;
 `
 const Grid = styled.div`
   display: grid;
