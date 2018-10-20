@@ -12,9 +12,9 @@ const Image = styled(Img)`
 const SectionHeader = styled.h2`
   font-weight: 300;
   text-align: center;
-  padding: 5rem 10px 0;
+  padding: 5rem 1rem 0;
   color: #4b4b4b;
-  font-size: 20px;
+  font-size: 2.4rem;
 `
 const Section = styled.div`
   display: grid;
@@ -23,25 +23,28 @@ const Section = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 2rem;
+  align-items: center;
+  padding: 2rem;
   @media (max-width: 400px) {
-    grid-gap: 4px;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
   }
 `
 
 const IndexPage = props => (
   <Layout>
-  <Section>
-    <SectionHeader>Blur up effect (GatsbyImageSharpFluid)</SectionHeader>
-    <Grid>
-      <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
-      <Img fluid={props.data.imageApp.childImageSharp.fluid} />
-    </Grid>
-    <SectionHeader>SVG trace effect (GatsbyImageSharpFluid_tracedSVG)</SectionHeader>
-    <Grid>
-      <Image fluid={props.data.imageDesert.childImageSharp.fluid} />
-      <Img fluid={props.data.imageBoat.childImageSharp.fluid} />
-    </Grid>
+    <Section>
+      <SectionHeader>Blur-up technique</SectionHeader>
+      <Grid>
+        <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
+        <Img fluid={props.data.imageApp.childImageSharp.fluid} />
+      </Grid>
+      <SectionHeader>Traced placeholder</SectionHeader>
+      <Grid>
+        <Image fluid={props.data.imageDesert.childImageSharp.fluid} />
+        <Img fluid={props.data.imageBoat.childImageSharp.fluid} />
+      </Grid>
     </Section>
   </Layout>
 )
@@ -74,7 +77,7 @@ export const fluidImage = graphql`
     }
   }
 `
-// SVG Trace
+// SVG trace
 export const traceImage = graphql`
   fragment traceImage on File {
     childImageSharp {

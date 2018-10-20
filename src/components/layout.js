@@ -3,16 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { GlobalStyle } from './global-styles'
 
 import Header from './header'
 
-
 const AppContainerStyle = styled.div`
   margin: 0 auto;
-  max-width: 960;
-  padding: 0px 1.0875rem 1.45rem;
 `
-
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,7 +34,10 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <AppContainerStyle> {children} </AppContainerStyle>
+        <React.Fragment>
+          <GlobalStyle />
+          <AppContainerStyle> {children} </AppContainerStyle>
+        </React.Fragment>
       </>
     )}
   />
