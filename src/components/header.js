@@ -62,8 +62,8 @@ const HeaderLogoLink = styled(Link)`
 
 const Header = ({ siteTitle }) => (
   <React.Fragment>
-  <GlobalStyle />
-  <HeaderContainer>
+    <GlobalStyle />
+    <HeaderContainer>
       <HeaderBar>
         <HeaderLogoText>
           <HeaderLogoLink to="/">{siteTitle}</HeaderLogoLink>
@@ -75,10 +75,10 @@ const Header = ({ siteTitle }) => (
           <PageLink to="/traced" exact activeClassName="active">
             Traced
           </PageLink>
-          <PageLink to="/">Color</PageLink>
+          <PageLink to="/color" exact>Color</PageLink>
         </LinkGroup>
       </HeaderBar>
-  </HeaderContainer>
+    </HeaderContainer>
   </React.Fragment>
 )
 
