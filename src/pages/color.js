@@ -16,10 +16,10 @@ const ColorPage = props => (
   <Layout>
     <Section>
       <Grid>
-        <Image fluid={props.data.imageIreland.childImageSharp.fluid} />
-        <Img fluid={props.data.imageCliffs.childImageSharp.fluid} />
-        <Image fluid={props.data.imageFall.childImageSharp.fluid} />
-        <Img fluid={props.data.imageYosemite.childImageSharp.fluid} />
+        <Image fluid={props.data.imageIreland.childImageSharp.fluid} backgroundColor="#2F80ED" />
+        <Img fluid={props.data.imageCliffs.childImageSharp.fluid} backgroundColor="#2D9CDB"/>
+        <Image fluid={props.data.imageFall.childImageSharp.fluid} backgroundColor="#56CCF2" />
+        <Img fluid={props.data.imageYosemite.childImageSharp.fluid} backgroundColor="#9B51E0"/>
       </Grid>
     </Section>
   </Layout>
