@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { GlobalStyle } from './global-styles'
+import { GlobalStyle } from './global'
 import Header from './header'
 
 const AppContainerStyle = styled.div`

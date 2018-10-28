@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
-import { Section, Grid } from '../components/global-styles'
+import { Section, Grid } from '../components/global'
 
 // Styled Component example - here we just pass in our gatsby Img component
 const Image = styled(Img)`

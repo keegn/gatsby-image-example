@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { GlobalStyle } from './global-styles'
+import { GlobalStyle } from './global'
 import styled from 'styled-components'
 
 // for use on scroll box-shadow: 0px 1px 3px rgba(72, 76, 87, 0.1);
