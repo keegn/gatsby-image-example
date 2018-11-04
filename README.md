@@ -1,9 +1,6 @@
 # Gatsby Image Demo (Gatsby.js V2)
 view progress: https://nifty-wilson-53597a.netlify.com/
 
-## Install
-
-
 ## license
 
 This project is licensed under the MIT License <br /> <br />
