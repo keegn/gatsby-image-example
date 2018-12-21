@@ -17,9 +17,9 @@ const TracedPage = props => (
     <Section>
       <Grid>
         <Image fluid={props.data.imageRainbow.childImageSharp.fluid} />
-        <Img fluid={props.data.imageField.childImageSharp.fluid} />
+        <Image fluid={props.data.imageField.childImageSharp.fluid} />
         <Image fluid={props.data.imageTan.childImageSharp.fluid} />
-        <Img fluid={props.data.imageWater.childImageSharp.fluid} />
+        <Image fluid={props.data.imageWater.childImageSharp.fluid} />
       </Grid>
     </Section>
   </Layout>

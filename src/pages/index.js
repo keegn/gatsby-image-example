@@ -17,9 +17,9 @@ const IndexPage = props => (
     <Section>
       <Grid>
         <Image fluid={props.data.imageMountain.childImageSharp.fluid} />
-        <Img fluid={props.data.imageApp.childImageSharp.fluid} />
+        <Image fluid={props.data.imageApp.childImageSharp.fluid} />
         <Image fluid={props.data.imageDesert.childImageSharp.fluid} />
-        <Img fluid={props.data.imageBoat.childImageSharp.fluid} />
+        <Image fluid={props.data.imageBoat.childImageSharp.fluid} />
       </Grid>
     </Section>
   </Layout>

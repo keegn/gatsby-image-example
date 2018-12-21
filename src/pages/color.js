@@ -11,15 +11,27 @@ const Image = styled(Img)`
   border-radius: none;
 `
 
-// In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
+// In the return below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
 const ColorPage = props => (
   <Layout>
     <Section>
       <Grid>
-        <Image fluid={props.data.imageIreland.childImageSharp.fluid} backgroundColor="#2F80ED" />
-        <Img fluid={props.data.imageCliffs.childImageSharp.fluid} backgroundColor="#2D9CDB"/>
-        <Image fluid={props.data.imageFall.childImageSharp.fluid} backgroundColor="#56CCF2" />
-        <Img fluid={props.data.imageYosemite.childImageSharp.fluid} backgroundColor="#9B51E0"/>
+        <Image
+          fluid={props.data.imageIreland.childImageSharp.fluid}
+          backgroundColor="#2F80ED"
+        />
+        <Image
+          fluid={props.data.imageCliffs.childImageSharp.fluid}
+          backgroundColor="#2D9CDB"
+        />
+        <Image
+          fluid={props.data.imageFall.childImageSharp.fluid}
+          backgroundColor="#56CCF2"
+        />
+        <Image
+          fluid={props.data.imageYosemite.childImageSharp.fluid}
+          backgroundColor="#9B51E0"
+        />
       </Grid>
     </Section>
   </Layout>
