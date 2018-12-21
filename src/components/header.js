@@ -42,6 +42,7 @@ const LinkGroup = styled.h2`
     padding: 1rem 0 2rem;
   }
 `
+
 const PageLink = styled(Link)`
   font-weight: 300;
   text-decoration: none;

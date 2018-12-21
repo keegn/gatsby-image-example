@@ -11,7 +11,7 @@ const Image = styled(Img)`
   border-radius: none;
 `
 
-// In the render below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
+// In the return below, the <Image /> component is our gatsby <Img /> component extended via styled-components - see line 9
 const TracedPage = props => (
   <Layout>
     <Section>
