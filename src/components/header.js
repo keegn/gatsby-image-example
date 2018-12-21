@@ -76,7 +76,9 @@ const Header = ({ siteTitle }) => (
           <PageLink to="/traced" exact activeClassName="active">
             Traced
           </PageLink>
-          <PageLink to="/color" exact>Color</PageLink>
+          <PageLink to="/color" exact>
+            Color
+          </PageLink>
         </LinkGroup>
       </HeaderBar>
     </HeaderContainer>

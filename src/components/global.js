@@ -49,4 +49,3 @@ export const Grid = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
