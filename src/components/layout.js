@@ -6,9 +6,11 @@ import styled from 'styled-components'
 
 import { GlobalStyle } from './global'
 import Header from './header'
+import Footer from './footer'
 
 const AppContainerStyle = styled.div`
   margin: 0 auto;
+  min-height: 100vh;
 `
 
 const Layout = ({ children }) => (
@@ -38,6 +40,7 @@ const Layout = ({ children }) => (
           <GlobalStyle />
           <AppContainerStyle> {children} </AppContainerStyle>
         </React.Fragment>
+        <Footer />
       </>
     )}
   />
